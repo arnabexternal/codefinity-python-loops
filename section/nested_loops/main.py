@@ -1,18 +1,24 @@
-# List of trips
-trips = [['france', 'germany', 'italy', 'spain', 'netherlands', 'sweden', 'norway', 'switzerland', 'austria', 'portugal', 'belgium'],
-         ['japan', 'china', 'thailand', 'vietnam', 'ndonesia', 'india', 'malaysia', 'philippines', 'singapore', 'mongolia'],
-         ['usa', 'canada', 'mexico', 'brazil', 'argentina', 'colombia', 'peru', 'chile', 'ecuador'],
-         ['egypt', 'morocco', 'south africa', 'tunisia', 'algeria', 'kenya', 'nigeria', 'ethiopia'],
-         ['australia', 'new zealand', 'fiji', 'papua new guinea', 'samoa']]
+# List of travel costs (each sublist represents a trip)
+travel_costs = [
+    [5, 15, 10, 8, 25, 30, 55, 68, 75, 5],
+    [60, 20, 60, 70, 80, 80, 80, 90, 90, 90],
+    [100, 100, 100, 100, 50, 110, 110, 120, 120, 120, 130],
+    [130, 140, 39, 140, 150, 150, 150, 150, 160, 160],
+    [170, 180, 180, 190, 40, 190, 200],
+    [200, 200, 200, 210, 11, 220, 220, 220, 250, 250, 250],
+    [280, 300, 300, 110, 300, 320, 350, 400, 400, 450],
+    [480, 500, 500, 90, 500, 550, 600, 700]
+]
 
-# List of all countries 
-countries = []
+# List to store maximum costs per trip
+max_costs = []
 
-for trip in trips:
-    for country in trip:
-        countries.append(country.capitalize() )
-
-
+for travel in travel_costs:
+    max = 0
+    for items in travel:
+        if items > max:
+            max = items
+    max_costs.append(max)
 
 # Testing
-print('List of Countries:', countries)
+print('Maximum Travel Costs:', max_costs)
